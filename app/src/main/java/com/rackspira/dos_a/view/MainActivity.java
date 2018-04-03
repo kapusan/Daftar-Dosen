@@ -7,17 +7,22 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+import android.widget.Toolbar;
 
 import com.rackspira.dos_a.R;
 
 public class MainActivity extends AppCompatActivity {
 
     private Spinner spinnerMain;
+    private android.support.v7.widget.Toolbar toolbarMain;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        toolbarMain = (android.support.v7.widget.Toolbar) findViewById(R.id.toolbar_main);
+        setSupportActionBar(toolbarMain);
 
         spinnerMain = (Spinner) findViewById(R.id.spinner_main);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.

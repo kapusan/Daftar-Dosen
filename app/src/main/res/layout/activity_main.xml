@@ -7,6 +7,7 @@
     tools:context="com.rackspira.dos_a.view.MainActivity">
 
     <RelativeLayout
+        android:id="@+id/container1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
@@ -14,21 +15,29 @@
             android:id="@+id/toolbar_main"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/colorPrimary">
+            android:background="@color/colorPrimary"
+            app:title="Daftar Dosen Akakom"
+            app:titleTextColor="#ffffff">
 
         </android.support.v7.widget.Toolbar>
 
-        <android.support.v7.widget.AppCompatSpinner
-            android:id="@+id/spinner_main"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="end"
-            android:layout_margin="8dp"
-            android:background="@drawable/ic_spinner"
-            android:gravity="center"
-            android:layout_alignParentRight="true">
-
-        </android.support.v7.widget.AppCompatSpinner>
     </RelativeLayout>
+
+    <android.support.v7.widget.AppCompatSpinner
+        android:id="@+id/spinner_main"
+        android:layout_below="@+id/container1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true">
+    </android.support.v7.widget.AppCompatSpinner>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_main"
+        android:layout_below="@+id/spinner_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="8dp">
+
+    </android.support.v7.widget.RecyclerView>
 
 </RelativeLayout>
