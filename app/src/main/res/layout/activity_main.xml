@@ -31,13 +31,11 @@
         android:layout_alignParentRight="true">
     </android.support.v7.widget.AppCompatSpinner>
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/recycler_main"
-        android:layout_below="@+id/spinner_main"
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/navigation_main"
+        android:layout_alignParentBottom="true"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_margin="8dp">
-
-    </android.support.v7.widget.RecyclerView>
-
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary">
+    </android.support.design.widget.BottomNavigationView>
 </RelativeLayout>

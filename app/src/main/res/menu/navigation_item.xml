@@ -1,4 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <item
+        android:id="@+id/navigation_home"
+        android:title="@string/home"
+        android:icon="@drawable/ic_beranda">
+    </item>
+
+    <item
+        android:id="@+id/navigation_dosen"
+        android:title="@string/dosen"
+        android:icon="@drawable/ic_dosen">
+    </item>
+
+    <item
+        android:id="@+id/navigation_tentang"
+        android:title="@string/tentang"
+        android:icon="@drawable/ic_tentang">
+
+    </item>
+
 </menu>

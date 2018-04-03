@@ -1,5 +1,8 @@
 <resources>
     <string name="app_name">Dos-A</string>
+    <string name="home">Home</string>
+    <string name="dosen">Dosen</string>
+    <string name="tentang">Tentang</string>
 
     <string-array name="pilihan">
         <item>Semester 1</item>
