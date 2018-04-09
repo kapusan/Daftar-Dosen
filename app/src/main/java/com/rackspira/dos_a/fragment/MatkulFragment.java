@@ -3,12 +3,15 @@ package com.rackspira.dos_a.fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.AppCompatSpinner;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 
 import com.rackspira.dos_a.R;
+import com.rackspira.dos_a.adapter.MatkulList;
 
 /**
  * Created by iTPix on 4/4/2018.
@@ -17,6 +20,7 @@ import com.rackspira.dos_a.R;
 public class MatkulFragment extends android.support.v4.app.Fragment {
 
     private AppCompatSpinner spinnerSemester;
+    private RecyclerView recyclerView;
 
     public MatkulFragment() {
     }
@@ -33,6 +37,11 @@ public class MatkulFragment extends android.support.v4.app.Fragment {
                 R.layout.support_simple_spinner_dropdown_item
         );
         spinnerSemester.setAdapter(spinneAdapter);
+
+        recyclerView = (RecyclerView)view.findViewById(R.id.recycler_fragment_matkul);
+        MatkulList adapter = new MatkulList(getContext());
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        recyclerView.setAdapter(adapter);
 
         return view;
     }

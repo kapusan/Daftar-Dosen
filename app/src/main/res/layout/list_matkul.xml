@@ -25,6 +25,7 @@
             android:textStyle="bold"
             android:gravity="left|center"/>
         <TextView
+            android:id="@+id/textview_sks_matkul"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_weight="4"
