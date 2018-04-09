@@ -25,30 +25,24 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
                 android:text="Nama Dosen"
+                android:textColor="#000"
                 android:textSize="20sp"
-                android:textStyle="bold"
-                android:textColor="#000"/>
+                android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/textview_ruangan_dosen"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="right"
-                android:text="Ruangan Dosen"
-                android:id="@+id/textview_ruangan_dosen"/>
+                android:text="Ruangan Dosen" />
 
         </LinearLayout>
 
-        <LinearLayout
+        <View
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="5dp">
-            <View
-                android:layout_width="0dp"
-                android:layout_height="1dp"
-                android:layout_weight="1"
-                android:background="#616161"/>
-        </LinearLayout>
+            android:layout_height="1dp"
+            android:background="#616161" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -62,7 +56,7 @@
                 android:layout_weight="2"
                 android:text="Nama Mata Kuliah"
                 android:textColor="#000"
-                android:textSize="15sp"/>
+                android:textSize="15sp" />
 
             <TextView
                 android:id="@+id/textview_sks"
@@ -71,7 +65,7 @@
                 android:layout_weight="1"
                 android:gravity="right"
                 android:text="2 SKS"
-                android:textColor="#2a940d"/>
+                android:textColor="#2a940d" />
         </LinearLayout>
 
         <LinearLayout
@@ -85,28 +79,29 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Kelas"
-                android:textColor="#000"/>
+                android:textColor="#000" />
 
             <RelativeLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1">
+
                 <TextView
                     android:id="@+id/textview_hari"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_toLeftOf="@id/textview_jam"
                     android:text="Senin : "
-                    android:textColor="#ba2222"
-                    android:layout_toLeftOf="@id/textview_jam"/>
+                    android:textColor="#ba2222" />
 
                 <TextView
                     android:id="@+id/textview_jam"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
                     android:gravity="right"
                     android:text="00:08 - 12:00"
-                    android:textColor="#ba2222"
-                    android:layout_alignParentRight="true"/>
+                    android:textColor="#ba2222" />
             </RelativeLayout>
         </LinearLayout>
 
