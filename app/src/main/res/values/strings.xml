@@ -5,13 +5,7 @@
     <string name="tentang">Tentang</string>
 
     <string-array name="pilihan">
-        <item>SEMESTER 1</item>
-        <item>SEMESTER 2</item>
-        <item>SEMESTER 3</item>
-        <item>SEMESTER 4</item>
-        <item>SEMESTER 5</item>
-        <item>SEMESTER 6</item>
-        <item>SEMESTER 7</item>
-        <item>SEMESTER 8</item>
+        <item>SEMESTER GANJIL</item>
+        <item>SEMESTER GENAP</item>
     </string-array>
 </resources>

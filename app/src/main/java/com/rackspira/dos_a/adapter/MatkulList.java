@@ -1,6 +1,5 @@
 package com.rackspira.dos_a.adapter;
 
-import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,32 +7,37 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.rackspira.dos_a.R;
+import com.rackspira.dos_a.Model.ListJadwal;
+
+import java.util.List;
 
 /**
  * Created by Anang S on 03/04/2018.
  */
 
 public class MatkulList extends RecyclerView.Adapter<MatkulList.MyHolder> {
-    private Context context;
 
-    public MatkulList(Context context) {
-        this.context = context;
+    private List<ListJadwal> listJadwals;
+
+    public MatkulList(List<ListJadwal> listJadwals) {
+        this.listJadwals = listJadwals;
     }
 
     @Override
     public MatkulList.MyHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.list_matkul, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_matkul, parent, false);
         return new MatkulList.MyHolder(view);
     }
 
     @Override
     public void onBindViewHolder(MatkulList.MyHolder holder, int position) {
-
+        holder.textViewMatkul.setText(listJadwals.get(position).getNamaMakul());
+        holder.textViewSks.setText(listJadwals.get(position).getSks());
     }
 
     @Override
     public int getItemCount() {
-        return 6;
+        return listJadwals.size();
     }
 
     public class MyHolder extends RecyclerView.ViewHolder {

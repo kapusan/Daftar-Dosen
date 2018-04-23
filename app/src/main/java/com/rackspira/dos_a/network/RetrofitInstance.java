@@ -10,11 +10,11 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class RetrofitInstance {
 
     private static Retrofit retrofit;
-    private static final String BASE_URL = "di isi link";
+    private static final String BASE_URL = "http://dosen.rackspira.id/API/";
 
     public static Retrofit getRetrofitInstance(){
         if (retrofit == null ){
-            retrofit = new retrofit2.Retrofit.Builder()
+            retrofit = new Retrofit.Builder()
                     .baseUrl(BASE_URL)
                     .addConverterFactory(GsonConverterFactory.create())
                     .build();

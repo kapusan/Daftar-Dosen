@@ -7,7 +7,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.rackspira.dos_a.Model.ListJadwal;
 import com.rackspira.dos_a.R;
+
+import java.util.List;
 
 /**
  * Created by Anang S on 03/04/2018.
@@ -15,9 +18,11 @@ import com.rackspira.dos_a.R;
 
 public class DosenList extends RecyclerView.Adapter<DosenList.MyHolder> {
     private Context context;
+    private List<ListJadwal> jadwalList;
 
-    public DosenList(Context context) {
+    public DosenList(Context context, List<ListJadwal> jadwalList) {
         this.context = context;
+        this.jadwalList = jadwalList;
     }
 
     @Override
@@ -28,12 +33,13 @@ public class DosenList extends RecyclerView.Adapter<DosenList.MyHolder> {
 
     @Override
     public void onBindViewHolder(DosenList.MyHolder holder, int position) {
-
+        holder.textViewNamaDosen.setText(jadwalList.get(position).getNamaDosen());
+        holder.textViewRuangDosen.setText(jadwalList.get(position).getRuang());
     }
 
     @Override
     public int getItemCount() {
-        return 6;
+        return jadwalList.size();
     }
 
     public class MyHolder extends RecyclerView.ViewHolder {
