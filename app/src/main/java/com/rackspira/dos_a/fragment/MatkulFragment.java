@@ -9,16 +9,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.Toast;
 
+import com.rackspira.dos_a.Model.BaseResponse;
+import com.rackspira.dos_a.Model.DataMatkul;
 import com.rackspira.dos_a.R;
 import com.rackspira.dos_a.adapter.MatkulList;
-import com.rackspira.dos_a.Model.Data;
-import com.rackspira.dos_a.Model.ListJadwal;
 import com.rackspira.dos_a.network.GetDataService;
 import com.rackspira.dos_a.network.RetrofitInstance;
-
-import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -50,38 +47,32 @@ public class MatkulFragment extends android.support.v4.app.Fragment {
         );
         spinnerSemester.setAdapter(spinneAdapter);
 
-        initViews(view);
+        recyclerView = (RecyclerView) view.findViewById(R.id.recycler_fragment_matkul);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+
+        getMatkul();
 
         return view;
     }
 
-    private void initViews(View view) {
-        recyclerView = (RecyclerView) view.findViewById(R.id.recycler_fragment_matkul);
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext());
-        recyclerView.setLayoutManager(layoutManager);
-//        loadJSON();
-    }
-
-    private void loadJSON() {
+    private void getMatkul() {
         GetDataService service = RetrofitInstance.getRetrofitInstance().create(GetDataService.class);
-        Call<Data> call = service.getData();
-        call.enqueue(new Callback<Data>() {
-            @Override
-            public void onResponse(Call<Data> call, Response<Data> response) {
-                Data data = response.body();
-                List<ListJadwal> listJadwals = data.getListJadwals();
-                adapter = new MatkulList(listJadwals);
-                recyclerView.setAdapter(adapter);
-            }
+        Call<BaseResponse<DataMatkul>> call = service.getJadwalMatkul();
+         call.enqueue(new Callback<BaseResponse<DataMatkul>>() {
+             @Override
+             public void onResponse(Call<BaseResponse<DataMatkul>> call, Response<BaseResponse<DataMatkul>> response) {
+                 if (response.isSuccessful()){
+                     MatkulList adapter = new MatkulList(getContext(), response.body().getData().getDataMakul());
+                     recyclerView.setAdapter(adapter);
+                 }
+             }
 
-            @Override
-            public void onFailure(Call<Data> call, Throwable t) {
-                Toast.makeText(getContext(), "Something went wrong...Try Again Later", Toast.LENGTH_SHORT).show();
-                t.printStackTrace();
-            }
-        });
+             @Override
+             public void onFailure(Call<BaseResponse<DataMatkul>> call, Throwable t) {
+
+             }
+         });
     }
-
 
 
 }

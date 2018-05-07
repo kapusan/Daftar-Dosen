@@ -2,10 +2,6 @@ package com.rackspira.dos_a.Model;
 
 import java.util.List;
 
-/**
- * Created by Anang S on 23/04/2018.
- */
-
 public class DataJadwal {
     private String jumlah_jadwal;
     private List<ListJadwal> dataJadwal;

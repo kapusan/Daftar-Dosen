@@ -1,9 +1,11 @@
 package com.rackspira.dos_a.network;
 
+import android.support.v7.widget.CardView;
+
 import com.rackspira.dos_a.Model.BaseResponse;
-import com.rackspira.dos_a.Model.Data;
 import com.rackspira.dos_a.Model.DataJadwal;
-import com.rackspira.dos_a.Model.ListJadwal;
+import com.rackspira.dos_a.Model.DataMatkul;
+import com.rackspira.dos_a.Model.DataNamaDosen;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
@@ -14,10 +16,16 @@ import retrofit2.http.Query;
  */
 
 public interface GetDataService {
-    @GET("jadwal")
-    Call<Data> getData();
+    @GET("makul")
+    Call<BaseResponse<DataMatkul>> getJadwalMatkul();
+
+    @GET("dosen")
+    Call<BaseResponse<DataNamaDosen>> getJadwalDosen();
 
     @GET("jadwal_by_dosen")
-    Call<BaseResponse<DataJadwal>> getJadwalDosen(@Query("nama_dosen") String nama_dosen);
+    Call<BaseResponse<DataJadwal>> getDetailDosen(@Query("nama_dosen") String dosen);
+
+    @GET("jadwal_by_makul")
+    Call<BaseResponse<DataJadwal>> getDetailMakul(@Query("makul") String makul);
 
 }

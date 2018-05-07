@@ -1,5 +1,7 @@
 package com.rackspira.dos_a.view;
 
+import android.app.SearchManager;
+import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
@@ -11,13 +13,23 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.ArrayAdapter;
 import android.widget.FrameLayout;
+import android.widget.SearchView;
 import android.widget.Spinner;
 import android.widget.Toolbar;
 
+import com.rackspira.dos_a.Model.BaseResponse;
+import com.rackspira.dos_a.Model.DataNamaDosen;
 import com.rackspira.dos_a.R;
+import com.rackspira.dos_a.adapter.DosenList;
 import com.rackspira.dos_a.fragment.AboutFragment;
 import com.rackspira.dos_a.fragment.DosenFragment;
 import com.rackspira.dos_a.fragment.MatkulFragment;
+import com.rackspira.dos_a.network.GetDataService;
+import com.rackspira.dos_a.network.RetrofitInstance;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -31,6 +43,8 @@ public class MainActivity extends AppCompatActivity {
     private MatkulFragment matkulFragment;
     private DosenFragment dosenFragment;
     private AboutFragment aboutFragment;
+    private android.support.v7.widget.SearchView searchView;
+    private DosenList adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,6 +88,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
+
 
     private void setFragment(Fragment fragment) {
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();

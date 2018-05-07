@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://E:\PUNYAKU\DosA\Daftar-Dosen.iml" filepath="E:\PUNYAKU\DosA\Daftar-Dosen.iml" />
       <module fileurl="file://$PROJECT_DIR$/DosA.iml" filepath="$PROJECT_DIR$/DosA.iml" />
-      <module fileurl="file://D:\Project\AndroidStudioProjects\Daftar-Dosen\DosA.iml" filepath="D:\Project\AndroidStudioProjects\Daftar-Dosen\DosA.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

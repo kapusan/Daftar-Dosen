@@ -5,7 +5,8 @@
     android:layout_height="wrap_content"
     card_view:cardCornerRadius="6dp"
     card_view:cardElevation="3dp"
-    card_view:cardUseCompatPadding="true">
+    card_view:cardUseCompatPadding="true"
+    android:id="@+id/cardview_makul">
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
@@ -24,15 +25,6 @@
             android:textColor="#212121"
             android:textStyle="bold"
             android:gravity="left|center"/>
-        <TextView
-            android:id="@+id/textview_sks_matkul"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_weight="4"
-            android:text="2 SKS"
-            android:gravity="right|center"
-            android:textColor="#2a940d"/>
-
     </LinearLayout>
 
 </android.support.v7.widget.CardView>
