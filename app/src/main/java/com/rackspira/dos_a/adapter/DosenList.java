@@ -23,7 +23,7 @@ import java.util.List;
  * Created by Anang S on 03/04/2018.
  */
 
-public class DosenList extends RecyclerView.Adapter<DosenList.MyHolder> implements Filterable {
+public class DosenList extends RecyclerView.Adapter<DosenList.MyHolder> {
     private Context context;
     private List<ListDosen> jadwalList;
     private List<ListDosen> jadwalListFiltered;
@@ -59,37 +59,6 @@ public class DosenList extends RecyclerView.Adapter<DosenList.MyHolder> implemen
         return jadwalList.size();
     }
 
-    @Override
-    public Filter getFilter() {
-        return new Filter() {
-            @Override
-            protected FilterResults performFiltering(CharSequence charSequence) {
-                String charString = charSequence.toString();
-                if (charString.isEmpty()) {
-                    jadwalListFiltered = jadwalList;
-                } else {
-                    List<ListDosen> filteredList = new ArrayList<>();
-                    for (ListDosen row : jadwalList) {
-                        if (row.getNama_dosen().toLowerCase().contains(charString.toLowerCase())) ;
-                        filteredList.add(row);
-                    }
-
-                    jadwalListFiltered = filteredList;
-                }
-
-                FilterResults filterResults = new FilterResults();
-                filterResults.values = jadwalListFiltered;
-                return filterResults;
-            }
-
-            @Override
-            protected void publishResults(CharSequence charSequence, FilterResults filterResults) {
-                jadwalListFiltered = (ArrayList<ListDosen>) filterResults.values;
-                notifyDataSetChanged();
-            }
-        };
-    }
-
     public class MyHolder extends RecyclerView.ViewHolder {
         TextView textViewNamaDosen;
         CardView cardView;
@@ -102,8 +71,11 @@ public class DosenList extends RecyclerView.Adapter<DosenList.MyHolder> implemen
         }
     }
 
+    public void setFilter(ArrayList<ListDosen> newList){
+        jadwalList = new ArrayList<>();
+        jadwalList.addAll(newList);
+        notifyDataSetChanged();
 
-    public interface AdapterListener {
-        void onSelectedItem(ListDosen listDosen);
     }
+
 }

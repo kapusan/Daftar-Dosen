@@ -43,8 +43,6 @@ public class MainActivity extends AppCompatActivity {
     private MatkulFragment matkulFragment;
     private DosenFragment dosenFragment;
     private AboutFragment aboutFragment;
-    private android.support.v7.widget.SearchView searchView;
-    private DosenList adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

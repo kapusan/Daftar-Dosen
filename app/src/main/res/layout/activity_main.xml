@@ -17,7 +17,7 @@
             android:layout_height="wrap_content"
             android:background="@color/colorPrimary"
             app:title="Daftar Dosen Akakom"
-            app:titleTextColor="#ffffff">
+            android:theme="@style/Base.ThemeOverlay.AppCompat.Dark.ActionBar">
 
         </android.support.v7.widget.Toolbar>
 

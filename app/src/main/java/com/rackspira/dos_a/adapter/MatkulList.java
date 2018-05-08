@@ -9,11 +9,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.rackspira.dos_a.Model.ListDosen;
 import com.rackspira.dos_a.Model.ListMakul;
 import com.rackspira.dos_a.R;
 import com.rackspira.dos_a.Model.ListJadwal;
 import com.rackspira.dos_a.view.DetailMakulActivity;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -64,5 +66,12 @@ public class MatkulList extends RecyclerView.Adapter<MatkulList.MyHolder> {
             textViewMatkul = (TextView) itemView.findViewById(R.id.textview_mata_kuliah);
             cardView = itemView.findViewById(R.id.cardview_makul);
         }
+    }
+
+    public void setFilter(ArrayList<ListMakul> newList){
+        listJadwals = new ArrayList<>();
+        listJadwals.addAll(newList);
+        notifyDataSetChanged();
+
     }
 }
