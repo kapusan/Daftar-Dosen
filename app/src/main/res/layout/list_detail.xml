@@ -24,7 +24,7 @@
                 android:id="@+id/textview_nama_dosen"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="4"
+                android:layout_weight="2"
                 android:text="Nama Dosen"
                 android:textColor="#000"
                 android:textSize="20sp"
