@@ -68,7 +68,7 @@ public class DosenList extends RecyclerView.Adapter<DosenList.MyHolder> {
         public MyHolder(View itemView) {
             super(itemView);
             textViewNamaDosen = (TextView) itemView.findViewById(R.id.textview_nama_dosen);
-            Typeface s = Typeface.createFromAsset(itemView.getContext().getAssets(), "fonts/SourceSansPro-SemiBold.ttf");
+            Typeface s = Typeface.createFromAsset(context.getAssets(), "fonts/SourceSansPro-SemiBold.ttf");
             textViewNamaDosen.setTypeface(s);
             linearLayout = itemView.findViewById(R.id.sample_item_dosen);
 

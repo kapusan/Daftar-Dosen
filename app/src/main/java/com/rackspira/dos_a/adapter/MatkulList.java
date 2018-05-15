@@ -66,7 +66,7 @@ public class MatkulList extends RecyclerView.Adapter<MatkulList.MyHolder> {
         public MyHolder(View itemView) {
             super(itemView);
             textViewMatkul = (TextView) itemView.findViewById(R.id.textview_mata_kuliah);
-            Typeface s = Typeface.createFromAsset(itemView.getContext().getAssets(), "fonts/SourceSansPro-SemiBold.ttf");
+            Typeface s = Typeface.createFromAsset(context.getAssets(), "fonts/SourceSansPro-SemiBold.ttf");
             textViewMatkul.setTypeface(s);
             linearLayout = itemView.findViewById(R.id.sample_item_makul);
         }
