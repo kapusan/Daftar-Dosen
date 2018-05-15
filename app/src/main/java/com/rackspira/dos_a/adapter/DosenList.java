@@ -2,6 +2,7 @@ package com.rackspira.dos_a.adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -9,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Filter;
 import android.widget.Filterable;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.rackspira.dos_a.Model.ListDosen;
@@ -44,7 +46,7 @@ public class DosenList extends RecyclerView.Adapter<DosenList.MyHolder> {
     @Override
     public void onBindViewHolder(DosenList.MyHolder holder, final int position) {
         holder.textViewNamaDosen.setText(jadwalList.get(position).getNama_dosen());
-        holder.cardView.setOnClickListener(new View.OnClickListener() {
+        holder.linearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(context, DetailDosenActivity.class);
@@ -61,12 +63,14 @@ public class DosenList extends RecyclerView.Adapter<DosenList.MyHolder> {
 
     public class MyHolder extends RecyclerView.ViewHolder {
         TextView textViewNamaDosen;
-        CardView cardView;
+        LinearLayout linearLayout;
 
         public MyHolder(View itemView) {
             super(itemView);
             textViewNamaDosen = (TextView) itemView.findViewById(R.id.textview_nama_dosen);
-            cardView = itemView.findViewById(R.id.cardview_dosen);
+            Typeface s = Typeface.createFromAsset(itemView.getContext().getAssets(), "fonts/SourceSansPro-SemiBold.ttf");
+            textViewNamaDosen.setTypeface(s);
+            linearLayout = itemView.findViewById(R.id.sample_item_dosen);
 
         }
     }

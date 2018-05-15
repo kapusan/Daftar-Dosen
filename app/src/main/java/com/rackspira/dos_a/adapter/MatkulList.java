@@ -2,11 +2,13 @@ package com.rackspira.dos_a.adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.rackspira.dos_a.Model.ListDosen;
@@ -42,7 +44,7 @@ public class MatkulList extends RecyclerView.Adapter<MatkulList.MyHolder> {
     public void onBindViewHolder(MatkulList.MyHolder holder, final int position) {
         holder.textViewMatkul.setText(listJadwals.get(position).getMata_kuliah());
 
-        holder.cardView.setOnClickListener(new View.OnClickListener() {
+        holder.linearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(context, DetailMakulActivity.class);
@@ -59,12 +61,14 @@ public class MatkulList extends RecyclerView.Adapter<MatkulList.MyHolder> {
 
     public class MyHolder extends RecyclerView.ViewHolder {
         TextView textViewMatkul, textViewSks;
-        CardView cardView;
+        LinearLayout linearLayout;
 
         public MyHolder(View itemView) {
             super(itemView);
             textViewMatkul = (TextView) itemView.findViewById(R.id.textview_mata_kuliah);
-            cardView = itemView.findViewById(R.id.cardview_makul);
+            Typeface s = Typeface.createFromAsset(itemView.getContext().getAssets(), "fonts/SourceSansPro-SemiBold.ttf");
+            textViewMatkul.setTypeface(s);
+            linearLayout = itemView.findViewById(R.id.sample_item_makul);
         }
     }
 
