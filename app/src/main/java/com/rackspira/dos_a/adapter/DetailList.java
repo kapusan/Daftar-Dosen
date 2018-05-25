@@ -68,28 +68,28 @@ public class DetailList extends RecyclerView.Adapter<DetailList.MyHolder> {
             textViewJamMulai = (TextView) itemView.findViewById(R.id.textview_jam_mulai);
             textViewJamSelesai = itemView.findViewById(R.id.textview_jam_selesai);
 
-            Typeface namaDosenFont = Typeface.createFromAsset(context.getAssets(),"fonts/Philosopher-Bold.ttf");
+            Typeface namaDosenFont = Typeface.createFromAsset(context.getAssets(), "fonts/namadosen_font.ttf");
             textViewNamaDosen.setTypeface(namaDosenFont);
 
-            Typeface matkulFont = Typeface.createFromAsset(context.getAssets(),"fonts/Comfortaa-Regular.ttf");
+            Typeface matkulFont = Typeface.createFromAsset(context.getAssets(), "fonts/detail_font.ttf");
             textViewMatkul.setTypeface(matkulFont);
 
-            Typeface sksFont = Typeface.createFromAsset(context.getAssets(),"fonts/Comfortaa-Regular.ttf");
+            Typeface sksFont = Typeface.createFromAsset(context.getAssets(), "fonts/detail_font.ttf");
             textViewMatkul.setTypeface(sksFont);
 
-            Typeface ruangDosenFont = Typeface.createFromAsset(context.getAssets(),"fonts/Comfortaa-Regular.ttf");
+            Typeface ruangDosenFont = Typeface.createFromAsset(context.getAssets(), "fonts/detail_font.ttf");
             textViewMatkul.setTypeface(ruangDosenFont);
 
-            Typeface kelasFont = Typeface.createFromAsset(context.getAssets(),"fonts/Comfortaa-Regular.ttf");
+            Typeface kelasFont = Typeface.createFromAsset(context.getAssets(), "fonts/detail_font.ttf");
             textViewMatkul.setTypeface(kelasFont);
 
-            Typeface hariFont = Typeface.createFromAsset(context.getAssets(),"fonts/Comfortaa-Regular.ttf");
+            Typeface hariFont = Typeface.createFromAsset(context.getAssets(), "fonts/detail_font.ttf");
             textViewMatkul.setTypeface(hariFont);
 
-            Typeface jamMulaiFont = Typeface.createFromAsset(context.getAssets(),"fonts/Comfortaa-Regular.ttf");
+            Typeface jamMulaiFont = Typeface.createFromAsset(context.getAssets(), "fonts/detail_font.ttf");
             textViewMatkul.setTypeface(jamMulaiFont);
 
-            Typeface jamSelesaiFont = Typeface.createFromAsset(context.getAssets(),"fonts/Comfortaa-Regular.ttf");
+            Typeface jamSelesaiFont = Typeface.createFromAsset(context.getAssets(), "fonts/detail_font.ttf");
             textViewMatkul.setTypeface(jamSelesaiFont);
 
         }

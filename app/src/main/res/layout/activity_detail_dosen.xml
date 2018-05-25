@@ -13,9 +13,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/colorPrimary"
-        android:theme="@style/Base.ThemeOverlay.AppCompat.Dark.ActionBar"
-        app:title="Dosen">
-
+        android:theme="@style/Base.ThemeOverlay.AppCompat.Dark.ActionBar">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textview_dosen_activity"
+            android:text="Dosen"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
     </android.support.v7.widget.Toolbar>
 
     <android.support.v7.widget.RecyclerView

@@ -13,16 +13,32 @@
         android:padding="5dp">
 
         <TextView
+            android:id="@+id/textview_tahunakademik"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="T.A. 2017/2018"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/textview_filter"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"/>
+
+        <TextView
+            android:id="@+id/textview_filter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Filter : "
-            app:layout_constraintStart_toStartOf="parent"/>
+            app:layout_constraintStart_toEndOf="@id/textview_tahunakademik"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/spinner_semester"/>
 
         <android.support.v7.widget.AppCompatSpinner
             android:id="@+id/spinner_semester"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/textview_filter"/>
     </android.support.constraint.ConstraintLayout>
 
     <android.support.v7.widget.RecyclerView

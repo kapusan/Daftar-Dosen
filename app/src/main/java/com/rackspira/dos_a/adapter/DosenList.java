@@ -3,18 +3,14 @@ package com.rackspira.dos_a.adapter;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Typeface;
-import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Filter;
-import android.widget.Filterable;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.rackspira.dos_a.Model.ListDosen;
-import com.rackspira.dos_a.Model.ListJadwal;
 import com.rackspira.dos_a.R;
 import com.rackspira.dos_a.view.DetailDosenActivity;
 
@@ -68,7 +64,7 @@ public class DosenList extends RecyclerView.Adapter<DosenList.MyHolder> {
         public MyHolder(View itemView) {
             super(itemView);
             textViewNamaDosen = (TextView) itemView.findViewById(R.id.textview_nama_dosen);
-            Typeface s = Typeface.createFromAsset(context.getAssets(), "fonts/SourceSansPro-SemiBold.ttf");
+            Typeface s = Typeface.createFromAsset(context.getAssets(), "fonts/listname_font.ttf");
             textViewNamaDosen.setTypeface(s);
             linearLayout = itemView.findViewById(R.id.sample_item_dosen);
 

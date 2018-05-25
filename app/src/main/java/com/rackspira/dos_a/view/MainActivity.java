@@ -2,6 +2,7 @@ package com.rackspira.dos_a.view;
 
 import android.app.SearchManager;
 import android.content.Context;
+import android.graphics.Typeface;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
@@ -15,6 +16,7 @@ import android.widget.ArrayAdapter;
 import android.widget.FrameLayout;
 import android.widget.SearchView;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toolbar;
 
 import com.rackspira.dos_a.Model.BaseResponse;
@@ -51,6 +53,10 @@ public class MainActivity extends AppCompatActivity {
 
         toolbarMain = (android.support.v7.widget.Toolbar) findViewById(R.id.toolbar_main);
         setSupportActionBar(toolbarMain);
+        getSupportActionBar().setTitle("");
+        TextView tvAppName = findViewById(R.id.textview_appname);
+        Typeface customFontAppName = Typeface.createFromAsset(this.getAssets(), "fonts/appname_font.ttf");
+        tvAppName.setTypeface(customFontAppName);
 
         mainNavigation = (BottomNavigationView) findViewById(R.id.navigation_main);
         frameMainNavigation = (FrameLayout) findViewById(R.id.navigation_frame);

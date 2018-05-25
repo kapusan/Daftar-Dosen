@@ -1,12 +1,14 @@
 package com.rackspira.dos_a.view;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.telecom.Call;
+import android.widget.TextView;
 
 import com.rackspira.dos_a.Model.BaseResponse;
 import com.rackspira.dos_a.Model.DataJadwal;
@@ -31,6 +33,10 @@ public class DetailMakulActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar)findViewById(R.id.toolbar_makul);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle("");
+        TextView tvAppName = findViewById(R.id.textview_matkul_activity);
+        Typeface customFontAppName = Typeface.createFromAsset(this.getAssets(), "fonts/appname_font.ttf");
+        tvAppName.setTypeface(customFontAppName);
 
         Intent intent = getIntent();
         String makul = intent.getStringExtra("makul");
